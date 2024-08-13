@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microblog - Share Your Thoughts</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar__brand">
+            <img src="static/microblog-logo.svg" alt="Microblog logo" class="navbar__logo">
+            <span class="navbar__title">Microblog</span>
+        </div>
+        <nav>
+            <ul class="navbar__navigation">
+                <li><a href="#" class="navbar__link">Recent</a></li>
+                <li><a href="#" class="navbar__link">Calendar</a></li>
+                <li><a href="#" class="navbar__link">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main" role="main">
+        <section class="section post-section">
+            <h1>Share Your Thoughts</h1>
+            <form class="form" method="POST">
+                <div class="form__group">
+                    <label for="entry-content" class="form__label">What's on your mind?</label>
+                    <textarea id="entry-content" name="content" class="form__textarea" rows="4" placeholder="Type your thoughts here..." required></textarea>
+                </div>
+                <button type="submit" class="form__submit">Post</button>
+            </form>            
+        </section>
+
+        <section class="section recent-posts">
+            <h2>Recent Posts</h2>
+            {% for entry in entries%}
+                <article class="entry">
+                    <div>
+                    <h3 class="entry__title">{{entry[0] | truncate(30,true) }}</h3>
+                    <time class="entry__date" datetime="{{entry[1]}}">•{{ entry[2]}}</time>
+                    </div>
+                    <p class="entry__content">
+                    {{ entry[0]}}
+                    </p>
+                </article>
+            {% endfor %}
+            <!-- Add more entries here -->
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__content">
+            <section class="footer__section">
+                <h2 class="footer__title">About Me</h2>
+                <p class="footer__description">
+                    Hi, I'm Sachin Kumar Sharma, a passionate developer focused on building scalable and efficient web applications. Check out my other projects and get in touch!
+                </p>
+                <div class="footer__social-media">
+                    <a href="https://github.com/Sachinsharmak" class="footer__social-link" target="_blank">
+                        <img src="static/github.png" alt="GitHub" class="footer__social-icon">
+                    </a>
+                    <a href="https://linkedin.com/in/sachinsharmak" class="footer__social-link" target="_blank">
+                        <img src="static/linkedin.png" alt="LinkedIn" class="footer__social-icon">
+                    </a>
+                    <a href="mailto:89272sachin1@gmail.com" class="footer__social-link">
+                        <img src="static/email.jpeg" alt="Email" class="footer__social-icon">
+                    </a>
+                </div>
+            </section>
+            <section class="footer__section">
+                <h2 class="footer__title">Quick Links</h2>
+                <nav class="footer__column">
+                    <a href="#" class="footer__item">Recent</a>
+                    <a href="#" class="footer__item">Calendar</a>
+                    <a href="#" class="footer__item">Profile</a>
+                </nav>
+            </section>
+            <section class="footer__section">
+                <h2 class="footer__title">Company</h2>
+                <nav class="footer__column">
+                    <a href="#" class="footer__item">About</a>
+                    <a href="#" class="footer__item">Contact</a>
+                    <a href="#" class="footer__item">Privacy Policy</a>
+                </nav>
+            </section>
+        </div>
+        <div class="footer__bottom">
+            © 2024 Sachin Kumar Sharma. All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>
