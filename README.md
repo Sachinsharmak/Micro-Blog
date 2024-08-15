@@ -22,12 +22,14 @@ Before you begin, ensure you have met the following requirements:
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/microblog.git
-    cd microblog
+    git clone https://github.com/Sachinsharmak/Micro-Blog.git
+    cd Micro-Blog
     ```
 
 2. Install the required dependencies:
     ```bash
+    pip install flask
+    pip install pymongo[srv]
     pip install -r requirements.txt
     ```
 
@@ -51,11 +53,8 @@ To run the application:
 ## Project Structure
 
 - `app.py`: Main application file containing Flask routes and MongoDB connection
-- `templates/`: Directory containing HTML templates
-    - `home.html`: Main template for the application
-- `static/`: Directory containing static files
-    - `css/`: Directory for CSS files
-        - `styles.css`: Custom styles for the application
+- `templates/home.html`: Main template for the application
+- `static/css/styles.css`: Custom styles for the application
 - `.env`: Environment variables file (not tracked in git)
 
 ## Frontend
