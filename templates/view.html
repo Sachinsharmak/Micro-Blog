@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Blog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar__brand">
+            <img src="/static/microblog-logo.svg" alt="Microblog logo" class="navbar__logo">
+            <span class="navbar__title">Microblog</span>
+        </div>
+        <nav>
+            <ul class="navbar__navigation">
+                <li><a href="/" class="navbar__link">Home</a></li>
+                <li><a href="#" class="navbar__link">Recent</a></li>
+                <li><a href="#" class="navbar__link">Calendar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main" role="main">
+        <section class="section view-section">
+            <h1>View Blog Entry</h1>
+            <article class="entry">
+                <p class="entry__content">{{ entry[0] }}</p>
+                <small class="entry__date">{{ entry[2] }}</small>
+            </article>
+            <a href="/" class="button">Back to Home</a>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__bottom">
+            © 2024 Sachin Kumar Sharma. All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>

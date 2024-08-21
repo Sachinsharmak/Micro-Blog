@@ -109,7 +109,7 @@ h1, h2 {
     color: var(--text-light);
 }
 
-.form__textarea {
+.form__textarea, .form__input {
     width: 100%;
     font-size: 1rem;
     padding: 15px;
@@ -119,7 +119,7 @@ h1, h2 {
     resize: vertical;
 }
 
-.form__textarea:focus {
+.form__textarea:focus, .form__input:focus {
     border-color: var(--primary-color);
     outline: none;
     box-shadow: 0 0 0 2px rgba(60, 208, 255, 0.2);
@@ -166,6 +166,23 @@ h1, h2 {
 .entry__content {
     margin-top: 10px;
     color: var(--text-color);
+}
+
+.entry__actions {
+    margin-top: 15px;
+    display: flex;
+    gap: 15px;
+}
+
+.entry__actions a {
+    text-decoration: none;
+    font-size: 0.875rem;
+    color: var(--primary-color);
+    transition: var(--transition);
+}
+
+.entry__actions a:hover {
+    color: var(--primary-hover);
 }
 
 /* Footer styles */
